@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+
+@theme {
+  
+  --color-primary: #c218a6;
+  --color-secondary: #3440cd;
+  --color-background-1: #000000;
+  /* --color-background-1: #071822; */
+  --color-background-2: #0b184a;
+  --color-gray: #c4c4c4;
+  /* --color-gray: #aaaeb1; */
+  --color-gray-100: #dbe0e4;
+  --font-Audiowide: "Audiowide";
+  --font-Exo2: "Exo 2";
+}
+
+.font-Exo2{
+  font-family: "Exo 2", sans-serif;
+}
+
+.font-Audiowide{
+  font-family: 'Audiowide', sans-serif;
+}
+
+*{
+  scroll-behavior: smooth;
+}
+
+
+@layer base {
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+}
+
+
+
+body {
+  color: white;
+}
+
+ .animate-line-in {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .line-visible {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.8s ease-out;
+  }
+  
+  .line-hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+  } 

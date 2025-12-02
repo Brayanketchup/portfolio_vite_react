@@ -1,0 +1,7 @@
+
+.Hero_transparent_text{
+    @apply text-transparent [-webkit-text-stroke:3px_#3440cd]
+}
+
+
+
