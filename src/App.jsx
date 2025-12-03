@@ -6,7 +6,7 @@ function App() {
 
 
   return (
-    <main className=' bg-black w-[100vw] overflow-clip relative'>
+    <main className=' bg-black max-w-screen overflow-clip relative'>
         <Navbar />
         <Hero />
         <About />
