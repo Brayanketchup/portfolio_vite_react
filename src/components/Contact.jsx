@@ -205,7 +205,7 @@ export const Contact = () => {
                   </div>
                 </div>
                 <a
-                  href="/resume.pdf"
+                  href="/Brayan_Martinez_Full_Stack_developer_Resume.pdf"
                   download="Brayan_Martinez_Resume_2025.pdf"
                   className="block w-full text-center py-3 bg-white/5 hover:bg-white/10 rounded-xl text-white font-medium transition-all duration-300 border border-gray-700 hover:border-purple-500/50"
                 >
