@@ -15,11 +15,12 @@ const ScrambledText = ({
   children
 }) => {
   const rootRef = useRef(null);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     if (!rootRef.current) return;
 
-    const split = SplitText.create(rootRef.current.querySelector('p'), {
+    const split = SplitText.create(contentRef.current, {
       type: 'chars',
       charsClass: 'inline-block will-change-transform'
     });
@@ -67,7 +68,8 @@ const ScrambledText = ({
       className={` max-w-[800px] ${className}`}
       style={style}
     >
-      <p>{children}</p>
+      {/* div, not p: children can be block elements (e.g. a ul), which are invalid inside p and break hydration */}
+      <div ref={contentRef}>{children}</div>
     </div>
   );
 };

@@ -8,4 +8,8 @@ export default defineConfig({
     react(),  
     tailwindcss(),
   ],
+  // Bundle gsap into the pre-render build; Node can't resolve its plugin imports as ESM.
+  ssr: {
+    noExternal: ['gsap'],
+  },
 })
