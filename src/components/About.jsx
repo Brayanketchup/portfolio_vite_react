@@ -29,8 +29,8 @@ export const About = () => {
 
                                     < div>
                                         <div><h1 className='font-bold'>Education</h1></div>
-                                        <div><h3>• Master on Computer Science Information System</h3></div>
-                                        <div><h3>• Bachelor on Computer Science Cyber Security</h3></div>
+                                        <div><h3>• Master's in Computer Science Information System</h3></div>
+                                        <div><h3>• Bachelor's in Computer Science Cyber Security</h3></div>
                                     </div>
 
                                     <p className=''>
@@ -64,17 +64,17 @@ export const About = () => {
                                         <ul className='columns-2 list-none '>
                                             <>
                                                 <li>• Next.js</li>
-                                                <li>• Javascript</li>
-                                                <li>• Typescript</li>
+                                                <li>• JavaScript</li>
+                                                <li>• TypeScript</li>
                                                 <li>• React</li>
                                                 <li>• React Native</li>
-                                                <li>• Tailwind</li>
+                                                <li>• Tailwind CSS</li>
                                                 <li>• Vite</li>
                                             </>
                                             <>
-                                                <li>• Php</li>
+                                                <li>• PHP</li>
                                                 <li>• Contentful</li>
-                                                <li>• MySql</li>
+                                                <li>• MySQL</li>
                                                 <li>• Firebase</li>
                                                 <li>• APIs</li>
                                                 <li>• Node.js</li>

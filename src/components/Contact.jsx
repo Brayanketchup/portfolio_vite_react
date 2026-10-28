@@ -74,7 +74,7 @@ export const Contact = () => {
   const contactItems = [
     {
       platform: 'Email',
-      value: 'Brayanrivas0226@gmail.com',
+      value: 'brayanrivas0226@gmail.com',
       link: 'mailto:brayanrivas0226@gmail.com',
       icon: <EmailIcon />,
       gradient: 'from-cyan-500 to-blue-600'
@@ -87,8 +87,8 @@ export const Contact = () => {
       gradient: 'from-blue-500 to-purple-600'
     },
     {
-      platform: 'Github',
-      value: 'BrayanKetchup',
+      platform: 'GitHub',
+      value: 'Brayanketchup',
       link: 'https://github.com/Brayanketchup',
       icon: <GithubIcon />,
       gradient: 'from-purple-500 to-pink-600'
