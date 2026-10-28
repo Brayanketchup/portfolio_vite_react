@@ -34,11 +34,10 @@ export const About = () => {
                                     </div>
 
                                     <p className=''>
-                                        Hey there! I'm a software engineer who loves diving into all
-                                        things tech—from machine learning and cybersecurity to web and
-                                        mobile apps (and whatever's next). I'm all about tackling new
-                                        challenges and building cool software solutions across different
-                                        fields. <span className='text-primary font-bold'>Let's see what we can create together!</span>
+                                        I'm a full-stack developer in New Jersey, building web applications
+                                        end to end at UniPro International Uniforms. My background spans web
+                                        development, machine-learning research and cybersecurity. I like
+                                        building tools that make data easy to work with. <span className='text-primary font-bold'>Let's talk.</span>
                                     </p>
                                 </ScrollReveal>
 

@@ -117,7 +117,7 @@ export const Contact = () => {
               <div className="h-1.5 w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full mt-2"></div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-400">
-              Let's build something amazing together
+              Let's talk about software engineering
             </h2>
           </div>
 
@@ -175,9 +175,9 @@ export const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl p-8 space-y-6">
                   <div>
-                    <h3 className="text-3xl font-bold text-white mb-3">Start a Project</h3>
+                    <h3 className="text-3xl font-bold text-white mb-3">Get in touch</h3>
                     <p className="text-gray-400 text-lg leading-relaxed">
-                      Have an idea? Let's discuss how we can bring your vision to life with cutting-edge technology.
+                      Questions about my work or a role you're hiring for? Email is the fastest way to reach me.
                     </p>
                   </div>
 
@@ -185,7 +185,7 @@ export const Contact = () => {
                     href="mailto:brayanrivas0226@gmail.com"
                     className="group/btn inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold text-white hover:from-cyan-400 hover:to-blue-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50"
                   >
-                    <span>Send Message</span>
+                    <span>Email me</span>
                     <svg className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -198,7 +198,7 @@ export const Contact = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h4 className="text-xl font-bold text-white mb-1">Resume</h4>
-                    <p className="text-gray-500 text-sm">Download my latest CV</p>
+                    <p className="text-gray-500 text-sm">Resume (PDF)</p>
                   </div>
                   <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center">
                     <DownloadIcon />
