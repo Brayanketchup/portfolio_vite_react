@@ -27,3 +27,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Optional skills and licenses, kept locally
+web3d-extras/
