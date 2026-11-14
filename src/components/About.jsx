@@ -36,8 +36,8 @@ export const About = () => {
                                     <p className=''>
                                         I'm a full-stack developer in New Jersey, building web applications
                                         end to end at UniPro International Uniforms. My background spans web
-                                        development, machine-learning research and cybersecurity. I like
-                                        building tools that make data easy to work with. <span className='text-primary font-bold'>Let's talk.</span>
+                                        development, machine-learning research and cybersecurity. I enjoy
+                                        building websites and apps and solving the technical problems that come with them.<span className='text-primary font-bold'>Let's talk.</span>
                                     </p>
                                 </ScrollReveal>
 

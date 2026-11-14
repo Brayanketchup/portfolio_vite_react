@@ -33,12 +33,10 @@ export const Hero = () => {
           <div className='flex flex-col gap-10 w-full md:w-3/4 text-center'>
             <h1 className='md:text-5xl text-3xl'>Brayan Martinez</h1>
             <p className='md:text-9xl text-5xl leading-tight'>
-              <span className='Hero_transparent_text'>Full-stack</span> developer building{' '}
-              <span className='Hero_transparent_text'>finance</span> and{' '}
-              <span className='Hero_transparent_text'>data</span> tools.
+              <span className='Hero_transparent_text'>Full-stack</span> Developer
             </p>
             <p className='font-Exo2 md:text-4xl text-2xl'>
-              Open to new opportunities in full-stack development.
+              Building web pages and solving technical problems.
             </p>
             <div className='flex flex-wrap justify-center gap-4 font-Exo2 md:text-3xl text-2xl pointer-events-auto'>
               <a
