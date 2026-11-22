@@ -11,6 +11,25 @@ const LinkIcon = () => (
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Sort by the optional numeric "order" field. Projects without it keep their fetched order, after the ordered ones.
+const sortByOrder = (items) =>
+    items
+        .map((item, i) => ({ item, i }))
+        .sort((a, b) => {
+            const oa = typeof a.item.fields?.order === 'number' ? a.item.fields.order : Infinity;
+            const ob = typeof b.item.fields?.order === 'number' ? b.item.fields.order : Infinity;
+            return oa - ob || a.i - b.i;
+        })
+        .map(({ item }) => item);
+
+const getCoverUrl = (project) => project.fields.coverImage?.fields?.file?.url;
+
+const CoverPlaceholder = ({ title, className = '' }) => (
+    <div className={`w-full h-full aspect-video flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 p-6 ${className}`}>
+        <span className='text-2xl md:text-4xl font-black text-gray-300 text-center break-words'>{title}</span>
+    </div>
+);
+
 const OptimizedImage = ({ src, alt, className }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [imageSrc, setImageSrc] = useState('');
@@ -80,8 +99,7 @@ export const Projects = () => {
         const getProjects = async () => {
             try {
                 const fetchedProjects = await fetchProjects();
-                console.log('Fetched Projects:', fetchedProjects);
-                setProjects(fetchedProjects);
+                setProjects(sortByOrder(fetchedProjects));
             } catch (error) {
                 console.error('Error fetching projects:', error);
             }
@@ -224,7 +242,7 @@ export const Projects = () => {
                         <div className="h-1 w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full mt-2"></div>
                     </div>
                     <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text">
-                        Web Applications
+                        Selected Work
                     </h2>
                 </div>
 
@@ -252,9 +270,11 @@ export const Projects = () => {
                                     >
                                         <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-gray-800 mx-1">
                                             <div className="relative aspect-video w-full overflow-hidden bg-black">
-                                                {Math.abs(index - activeProject) <= 1 && (
+                                                {!getCoverUrl(project) ? (
+                                                    <CoverPlaceholder title={project.fields.title} />
+                                                ) : Math.abs(index - activeProject) <= 1 && (
                                                     <img
-                                                        src={project.fields.coverImage.fields.file.url}
+                                                        src={getCoverUrl(project)}
                                                         alt={project.fields.title}
                                                         className='w-full h-full object-cover'
                                                         loading={index === 0 ? "eager" : "lazy"}
@@ -288,6 +308,7 @@ export const Projects = () => {
                                                 </div>
 
                                                 <div className='flex flex-col gap-3 pt-2'>
+                                                    {project.fields.linkAddress && (
                                                     <a
                                                         target='_blank'
                                                         rel='noopener noreferrer'
@@ -297,6 +318,7 @@ export const Projects = () => {
                                                         <span className="font-semibold text-white">Live Demo</span>
                                                         <LinkIcon />
                                                     </a>
+                                                    )}
                                                     <a
                                                         target='_blank'
                                                         rel='noopener noreferrer'
@@ -371,7 +393,7 @@ export const Projects = () => {
                         <div className="h-1.5 w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full mt-2"></div>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text">
-                        Web Applications
+                        Selected Work
                     </h2>
                 </div>
       
@@ -408,11 +430,15 @@ export const Projects = () => {
 
                                 <div className='flex flex-row w-full md:w-[50vw] relative'>
                                     <div className='project-image w-full h-full flex items-center justify-center px-[10px]'>
-                                        <OptimizedImage
-                                            src={project.fields.coverImage.fields.file.url}
-                                            alt={project.fields.title}
-                                            className='w-full h-full object-cover rounded-lg'
-                                        />
+                                        {getCoverUrl(project) ? (
+                                            <OptimizedImage
+                                                src={getCoverUrl(project)}
+                                                alt={project.fields.title}
+                                                className='w-full h-full object-cover rounded-lg'
+                                            />
+                                        ) : (
+                                            <CoverPlaceholder title={project.fields.title} className='rounded-lg' />
+                                        )}
                                     </div>
                                 </div>
 
@@ -425,6 +451,7 @@ export const Projects = () => {
                                     </div>
                                     
                                     <div className='flex flex-col gap-4'>
+                                        {project.fields.linkAddress && (
                                         <a
                                             target='_blank'
                                             rel='noopener noreferrer'
@@ -434,6 +461,7 @@ export const Projects = () => {
                                             <span className="font-semibold text-white">Live Demo</span>
                                             <LinkIcon />
                                         </a>
+                                        )}
                                         <a
                                             target='_blank'
                                             rel='noopener noreferrer'
